@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Comics</h1>
-    <a href="{{ route('comics.index') }}">View Listings</a>
-</body>
-</html>
+@extends('templates.welcome')
+
+@section('pageTitle', 'DC Comics - Home Page')
+    
+@section('pageContent')
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <div>
+            <a href="{{ route('comics.index') }}" class="d-block text-center"><img src="https://www.dccomics.com/sites/all/themes/dc_comics_bp/logo.png" alt="DC Comics" class="w-50"></a>
+            <h1 class="mt-5"><a href="{{ route('comics.index') }}" class="text-decoration-none text-primary">Scopri i fumetti della collezione</a></h1>
+        </div>
+    </div>
+@endsection

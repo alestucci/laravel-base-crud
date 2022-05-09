@@ -13,7 +13,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::paginate(3);
+        $comics = Comic::paginate(6);
         return view ('comics.index', compact('comics'));
     }
 
@@ -44,9 +44,19 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        return view('comics.show', [
+            'pageTitle' => $comic->title,
+            'comic' => $comic,
+        ]);
+        // $comic = Comic::find($id);
+
+        // if ($comic) {
+        //     dd($comic);
+        // } else {
+        //     abort(404);
+        // }
     }
 
     /**

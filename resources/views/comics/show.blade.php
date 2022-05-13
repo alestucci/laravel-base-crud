@@ -21,6 +21,9 @@
                             <button class="btn btn-secondary">€ {{$comic->price }}</button>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-light">Edit</a>
+                    </div>
                 </div>
             </div>
         </div>

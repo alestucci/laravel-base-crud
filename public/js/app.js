@@ -19380,6 +19380,18 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var deleteButton = document.getElementById("delete-button");
+var cancelButton = document.getElementById("cancel-button");
+var alertWindow = document.getElementById("alert-window");
+var blurrdeBackground = document.getElementById("background");
+deleteButton.addEventListener("click", switchAlert);
+cancelButton.addEventListener("click", switchAlert);
+
+function switchAlert() {
+  alertWindow.classList.toggle("d-none");
+  blurrdeBackground.classList.toggle("d-none");
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

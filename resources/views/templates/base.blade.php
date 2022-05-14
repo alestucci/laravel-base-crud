@@ -11,5 +11,6 @@
     @include('partials.header')
     @yield('pageContent')
     @include('partials.footer')
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

@@ -138,13 +138,13 @@ class ComicsTableSeeder extends Seeder
             $newComic->save();
         }
 
-        for ($i=0; $i <=88; $i++) {
+        for ($i = 0; $i <= 88; $i++) {
             Comic::create([
                 'title' => $faker->sentence(rand(1, 6)),
-                'description' => $faker-> text(rand(100, 300)),
-                'thumb' => 'https://picsum.photos/id/'. rand(200, 400) .'/129/192/',
+                'description' => $faker->text(rand(100, 300)),
+                'thumb' => 'https://picsum.photos/id/' . rand(200, 400) . '/129/192/',
                 'price' => $faker->randomNumber(2, false),
-                'series' => $faker->words(rand(1,4), true),
+                'series' => $faker->words(rand(1, 4), true),
                 'sale_date' => $faker->date(),
                 'type' => $faker->randomElement(['comic book', 'graphic novel'])
             ]);

@@ -19380,19 +19380,33 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var alertWindow = document.getElementById("alert-window");
+var blurredBackground = document.getElementById("background");
 var deleteButton = document.getElementById("delete-button");
+var confirmationForm = document.getElementById("confirmation-form");
+var cancelButton = document.getElementById("cancel-button");
+var deleteButtonList = document.querySelectorAll(".delete-button");
 
 if (deleteButton) {
-  var switchAlert = function switchAlert() {
-    alertWindow.classList.toggle("d-none");
-    blurrdeBackground.classList.toggle("d-none");
-  };
-
-  var cancelButton = document.getElementById("cancel-button");
-  var alertWindow = document.getElementById("alert-window");
-  var blurrdeBackground = document.getElementById("background");
   deleteButton.addEventListener("click", switchAlert);
   cancelButton.addEventListener("click", switchAlert);
+}
+
+if (deleteButtonList) {
+  deleteButtonList.forEach(function (button) {
+    return button.addEventListener("click", switchAlertAndSetFormAction);
+  });
+}
+
+function switchAlertAndSetFormAction() {
+  switchAlert();
+  confirmationForm.action = confirmationForm.dataset.base + "/" + this.dataset.id;
+  cancelButton.addEventListener("click", switchAlert);
+}
+
+function switchAlert() {
+  alertWindow.classList.toggle("d-none");
+  blurredBackground.classList.toggle("d-none");
 }
 
 /***/ }),

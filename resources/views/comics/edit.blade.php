@@ -30,7 +30,7 @@
         @enderror
         <div class="my-2">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="number" name="price" id="price" step="0.01" class="form-control" value="{{ $comic->price }}">
+            <input type="number" name="price" id="price" step="0.01" class="form-control" value="{{ $comic->price / 100}}">
         </div>
         @error('price')
         <div class="alert alert-danger">{{ $message }}</div>

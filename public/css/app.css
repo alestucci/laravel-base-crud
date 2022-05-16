@@ -12182,6 +12182,7 @@ fieldset:disabled .btn {
   transform: translate(-50%, -50%);
   background-color: white;
   border: 3px solid red;
+  opacity: 1;
   border-radius: 20px;
 }
 

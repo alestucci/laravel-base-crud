@@ -101,6 +101,7 @@ class ComicController extends Controller
 
         $request->validate($this->validationRules);
         $formData = $request->all();
+        $formData['price'] *= 100;
         $comic->update($formData);
         return redirect()->route('comics.show', $comic->id);
     }
@@ -113,7 +114,20 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
+        $previousURL = url()->previous();
+        if ($previousURL === route('comics.show', $comic->id)) {
+            $previousURL = route('comics.index');
+        }
+
         $comic->delete();
-        return redirect()->route('comics.index');
+        // return redirect()->route('comics.index');
+        return redirect($previousURL);
+    }
+
+    public function salelist()
+    {
+        $comics = Comic::paginate(20);
+
+        return view('comics.salelist', compact('comics'));
     }
 }

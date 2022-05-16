@@ -11,7 +11,7 @@
             </li>
             <li class="nav-item"><a href="{{ route('comics.index') }}" class="nav-link">Fumetti</a></li>
             <li class="nav-item"><a href="{{ route('comics.create') }}" class="nav-link">Nuovo</a></li>
-            <li class="nav-item"><a href="#!" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="{{ route('salelist') }}" class="nav-link">Listino</a></li>
             <li class="nav-item"><a href="#!" class="nav-link">About</a></li>
         </ul>
     </nav>

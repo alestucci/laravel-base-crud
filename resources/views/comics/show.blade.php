@@ -17,7 +17,7 @@
                     <div class="d-flex justify-content-between flex-wrap">
                         <button class="btn btn-info mx-1">Disponibile dal {{date('d/m/Y',
                             strtotime($comic->sale_date))}}</button>
-                        <button class="btn btn-success mx-1">€ {{$comic->price }}</button>
+                        <button class="btn btn-success mx-1">€ {{$comic->price / 100 }}</button>
                     </div>
                     <div class="d-flex justify-content-end my-3 flex-wrap">
                         <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-secondary mx-1">Edit</a>

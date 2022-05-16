@@ -7,7 +7,11 @@ use App\Comic;
 class ComicController extends Controller
 {
     protected $validationRules = [
-        'title' => 'required|unique:comics|max:100',
+        'title' => [
+            'required',
+            'unique:comics',
+            'max:100'
+        ],
         'description' => 'nullable|max:1000',
         'thumb' => 'url',
         'price' => 'required|numeric|min:1',
